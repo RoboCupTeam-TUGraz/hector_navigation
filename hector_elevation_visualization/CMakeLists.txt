@@ -18,8 +18,6 @@ generate_dynamic_reconfigure_options(cfg/ElevationVisualization.cfg)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 find_package(Eigen REQUIRED)
-include_directories(${EIGEN_INCLUDE_DIRS})
-add_definitions(${EIGEN_DEFINITIONS})
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -101,8 +99,11 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
   include
+  ${EIGEN_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
 )
+
+add_definitions(${EIGEN_DEFINITIONS})
 
 ## Declare a cpp library
 # add_library(hector_elevation_visualization
