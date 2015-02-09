@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   tf
   visualization_msgs
+  cmake_modules
 )
 generate_dynamic_reconfigure_options(cfg/ElevationVisualization.cfg)
 

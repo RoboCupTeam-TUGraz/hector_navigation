@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   rosconsole
   roscpp
   rospy
+  cmake_modules
 )
 
 ## System dependencies are found with CMake's conventions

@@ -718,13 +718,7 @@ bool HectorExplorationPlanner::exploreWalls(const geometry_msgs::PoseStamped &st
 
 void HectorExplorationPlanner::setupMapData()
 {
-#ifdef LAYERED_COSTMAP_H_
   costmap_ = costmap_ros_->getCostmap();
-#else
-  if (costmap_) delete costmap_;
-  costmap_ = new costmap_2d::Costmap2D;
-  costmap_ros_->getCostmapCopy(*costmap_);
-#endif
 
   if ((this->map_width_ != costmap_->getSizeInCellsX()) || (this->map_height_ != costmap_->getSizeInCellsY())){
     map_width_ = costmap_->getSizeInCellsX();
